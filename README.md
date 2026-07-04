@@ -50,9 +50,11 @@ netops compliance audit         # report violations, changes nothing
 
 
 
+
 ## Safety
 
 The tools that change device or record state are read-only until you opt in. `compliance remediate` and `ipam sync` are dry runs by default and print what they would do. Add `--apply` to act. Run remediation against a lab first and read the diff before production.
+
 
 
 
@@ -60,34 +62,34 @@ markdown
 
 ## Appendix A: Command quick reference
 
-
-### setup, done once
+'''bash
+# setup, done once
 python3 -m venv .venv
 source .venv/bin/activate            # activate every new terminal
 pip install -e ".[dev]"
 netops --help                        # confirm it installed
 pytest -q                            # run offline tests
 
-### configuration, edit these files
+# configuration, edit these files
 cp .env.example .env                 # then set credentials, chmod 600 .env
 cp inventory/devices.example.yaml inventory/devices.yaml   # then list devices
 
-### backup and drift
+# backup and drift
 netops backup run --no-push          # local only, safe first run
 netops backup run                    # commit and push to the private repo
 netops backup schedule --at 02:00    # simple built-in scheduler
 
-### compliance
+# compliance
 netops compliance audit              # read-only, reports violations
 netops compliance remediate          # dry run, prints the fix, changes nothing
 netops compliance remediate --apply  # pushes the fix (lab first)
 
-### pre and post change
+# pre and post change
 netops prepost snapshot pre          # before the change
 netops prepost snapshot post         # after the change
 netops prepost compare pre post      # report what broke
 
-### ipam
+# ipam
 netops ipam sync                     # preview discovered addresses
 netops ipam sync --apply             # write to NetBox
 

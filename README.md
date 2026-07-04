@@ -43,7 +43,11 @@ netops backup run --no-push     # safe local run, reads devices, changes nothing
 netops compliance audit         # report violations, changes nothing
 ```
 
+
+## Example: drift detection
+
 ![audit output](docs/img/audit.png)
+
 
 
 ## Safety

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netops-automation"
+version = "0.1.0"
+description = "Network automation toolkit: config backup and drift detection, pre/post change validation, STIG compliance auditing, and IPAM source-of-truth sync."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Archie Abeleda" }]
+keywords = ["netdevops", "netmiko", "network-automation", "stig", "netbox", "drift"]
+
+dependencies = [
+    "netmiko>=4.3",
+    "ntc-templates>=4.0",
+    "gitpython>=3.1",
+    "schedule>=1.2",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "pynetbox>=7.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+netops = "netops.cli:main"
+
+[project.urls]
+Homepage = "https://archieabeleda.dev"
+Repository = "https://github.com/ctrlf4rchie/netops-automation"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

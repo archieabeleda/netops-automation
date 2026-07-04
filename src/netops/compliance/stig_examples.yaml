@@ -1,0 +1,55 @@
+# Example rule set modeled on common DISA STIG checks for Cisco devices.
+# Extend this file with your own rules. Map ids to real benchmark ids as you go.
+rules:
+  - id: STIG-TELNET-DISABLED
+    title: Telnet must not be an allowed VTY input transport
+    severity: high
+    match: must_not_contain
+    pattern: "transport input telnet"
+    platforms: [cisco_ios, cisco_xe, cisco_nxos]
+    remediation:
+      - line vty 0 15
+      - transport input ssh
+
+  - id: STIG-SSH-V2
+    title: SSH version 2 must be enforced
+    severity: high
+    match: must_contain
+    pattern: "ip ssh version 2"
+    platforms: [cisco_ios, cisco_xe]
+    remediation:
+      - ip ssh version 2
+
+  - id: STIG-LOGIN-BANNER
+    title: A login banner must be present
+    severity: medium
+    match: must_contain
+    pattern: "banner (login|motd)"
+    platforms: [cisco_ios, cisco_xe]
+    remediation:
+      - banner login ^C Authorized access only. Activity is monitored. ^C
+
+  - id: STIG-NTP-SERVER
+    title: At least one NTP server must be configured
+    severity: medium
+    match: must_contain
+    pattern: "ntp server"
+    remediation:
+      - ntp server 10.0.0.253
+
+  - id: STIG-NO-HTTP-SERVER
+    title: The plaintext HTTP server must be disabled
+    severity: medium
+    match: must_not_contain
+    pattern: "^ip http server"
+    platforms: [cisco_ios, cisco_xe]
+    remediation:
+      - no ip http server
+
+  - id: LOCAL-SYSLOG
+    title: The approved syslog server must be configured
+    severity: medium
+    match: must_contain
+    pattern: "logging host 10.0.0.240"
+    remediation:
+      - logging host 10.0.0.240

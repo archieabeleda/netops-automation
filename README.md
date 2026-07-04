@@ -56,6 +56,7 @@ The tools that change device or record state are read-only until you opt in. `co
 
 
 
+markdown
 
 ## Appendix A: Command quick reference
 

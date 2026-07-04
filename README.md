@@ -62,7 +62,7 @@ markdown
 
 ## Appendix A: Command quick reference
 
-'''bash
+```bash
 # setup, done once
 python3 -m venv .venv
 source .venv/bin/activate            # activate every new terminal

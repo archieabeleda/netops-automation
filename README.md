@@ -98,8 +98,9 @@ netops ipam sync --apply             # write to NetBox
 
 ## Appendix B: Glossary
 
-**Control node**. The one computer that runs the toolkit and reaches out to the devices.
-**SSH. Secure Shell**. An encrypted way to log into a device remotely and run commands. Uses TCP port 22.
+```bash
+Control node. The one computer that runs the toolkit and reaches out to the devices.
+SSH. Secure Shell. An encrypted way to log into a device remotely and run commands. Uses TCP port 22.
 Running-config. The live configuration a device is currently using. The backup tool copies this.
 Virtual environment (venv). A private, isolated copy of Python for one project, so its libraries do not clash with anything else on the machine.
 pip. Python's package installer. It downloads and installs libraries.
@@ -122,6 +123,7 @@ Source of truth. The system that is treated as the authoritative record, here Ne
 NetBox. A database and web app for documenting networks, including IP address management.
 systemd. The Linux service and timer manager, used to run the backup automatically and reliably.
 cron. An older Linux scheduler that runs commands at set times.
+```
 
 
 

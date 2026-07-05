@@ -2,7 +2,7 @@
 
 Network automation for multi-vendor labs and internal networks. Four tools on one inventory and connection layer: config backup and drift detection, pre and post change validation, STIG compliance auditing, and IPAM source-of-truth sync.
 
-Live writeup → https://archieabeleda.github.io
+Live writeup → [https://archieabeleda.github.io](https://archieabeleda.github.io/netops-automation/)
 
 
 ## What this is

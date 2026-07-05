@@ -147,4 +147,4 @@ MIT. See LICENSE.
 ---
 
 Built by Archie Abeleda · CISSP · CCSP · CCNP Security · PCNSE
-[archieabeleda.dev](https://archieabeleda.dev) · [GitHub](https://github.com/ctrlf4rchie) · [LinkedIn](https://linkedin.com/in/ajrabeleda)
+[archieabeleda.dev](https://archieabeleda.dev) · [GitHub](https://github.com/archieabeleda) · [LinkedIn](https://linkedin.com/in/ajrabeleda)

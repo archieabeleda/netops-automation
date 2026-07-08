@@ -33,7 +33,7 @@ src/netops/
 ## Quickstart
 
 ```bash
-git clone https://github.com/ctrlf4rchie/netops-automation
+git clone https://github.com/archieabeleda/netops-automation
 cd netops-automation
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"

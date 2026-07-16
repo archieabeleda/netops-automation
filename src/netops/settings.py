@@ -19,6 +19,12 @@ class Settings(BaseSettings):
     password: str = ""
     secret: str = ""  # enable secret, left empty when not used
 
+    # SSH host key checking. When true, Netmiko loads ~/.ssh/known_hosts and
+    # rejects a device whose key is unknown or has changed. Left false so a
+    # first run against a fresh lab does not fail on an unseen key. Turn it on
+    # for anything you care about.
+    strict_host_key: bool = False
+
     # Inventory and local storage
     inventory_path: Path = Path("inventory/devices.yaml")
     config_store: Path = Path("data/configs")

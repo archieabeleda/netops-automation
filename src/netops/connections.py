@@ -8,8 +8,8 @@ lives in one place.
 from __future__ import annotations
 
 import logging
-from collections.abc import Iterator
 from contextlib import contextmanager
+from typing import Iterator
 
 from netmiko import BaseConnection, ConnectHandler
 
@@ -29,6 +29,10 @@ def connect(device: Device) -> Iterator[BaseConnection]:
         "password": settings.password,
         "secret": settings.secret,
         "fast_cli": False,
+        # Host key checking. Both flags follow the same setting: load
+        # known_hosts and reject an unknown or changed key when it is on.
+        "system_host_keys": settings.strict_host_key,
+        "ssh_strict": settings.strict_host_key,
     }
     log.debug("connecting to %s (%s)", device.name, device.host)
     conn = ConnectHandler(**params)

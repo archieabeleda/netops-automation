@@ -8,8 +8,8 @@ lives in one place.
 from __future__ import annotations
 
 import logging
+from collections.abc import Iterator
 from contextlib import contextmanager
-from typing import Iterator
 
 from netmiko import BaseConnection, ConnectHandler
 
